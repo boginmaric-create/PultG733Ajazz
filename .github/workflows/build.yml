@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+env:
+  PYTHONUTF8: "1"
+  PYTHONIOENCODING: utf-8
+
 jobs:
   build:
     runs-on: windows-latest
@@ -23,8 +27,6 @@ jobs:
 
       - name: Иконка
         run: python make_icon.py
-        env:
-          QT_QPA_PLATFORM: offscreen
 
       - name: Сборка
         run: python -m PyInstaller --noconfirm --clean --onefile --windowed --name PultG733Ajazz --icon assets\app.ico --version-file version_info.txt main.py

@@ -29,4 +29,4 @@ for b in blobs:
 p = Path(__file__).resolve().parent / "assets" / "app.ico"
 p.parent.mkdir(exist_ok=True)
 p.write_bytes(out)
-print("иконка:", p)
+print("icon:", p)
